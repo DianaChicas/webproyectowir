@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wir</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <header>
+
+        <!-------------------NAVBAR------------------->
+        <nav class="navbar">
+            <a class="link"></a>
+            <a class="link"></a>
+            <a href="" class="link">inicio</a>
+            <a href="" class="link">ultimos productos</a>
+            <a href="" class="link">mejor vendidos</a>
+            <a href="" class="link">productos</a>
+            <a class="link"></a>
+            <a class="link"></a>
+            <a class="link"></a>
+            <a class="link"></a>
+            <a class="link"></a>
+        </nav>
+
+        <!-------------------LOGO------------------->
+
+        <div class="logo">
+            <a href="index.html" class="fa-brands fa-wirsindhandwerk"></a>
+        </div>
+
+        <!-------------------ICONS DEL MENU------------------->
+
+        <div class="icons">
+            <div class="fa-solid fa-user"></div>
+            <div class="fa-solid fa-search"></div>
+            <div class="carrito-compra fa-solid fa-bag-shopping"><span class="noti"></span></div>
+            <div class="menu-icon fa-solid fa-bars"></div>
+        </div>
+
+        <!-------------------CARRITO DE COMPRAS------------------->
+
+        <div class="shopping-card">
+            <table class="table">
+                <!-------------------HEADER------------------->
+                <thead>
+                    <tr>
+                        <th scope="col">producto</th>
+                        <th scope="col">cantidad</th>
+                        <th scope="col">total</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <!-------------------BODY------------------->
+                <tbody>
+                    <tbody id="items" class="items">
+                       <th scope="row" colspan="3" class="carrito-vacio">carrito vacio</th>
+                    </tbody>  
+                </tbody>
+                <!-------------------FOOTER------------------->
+                <tfoot class="footer-carrito" id="footer">
+                    
+                </tfoot>
+            </table>    
+        </div>
+    </header>
+
+    <!--------------------------------SECTION TEMPLATE--------------------------------->
+
+
+
+    <section class="templates">
+
+    <!-------------------TEMPLATE CARRITO------------------->
+
+      
+            <div class="notificacion" id="notificacion"></div>
+            
+            
+            <template id="template-carrito">
+                <tr>
+                    <td scope="col" class="imagen-carrito"><img src="" alt=""></td>
+                    <td scope="col" colspan="1">
+                        <button class="btn-menos fa-solid fa-caret-left"></button>
+                        <span class="cantidad">1</span>
+                        <button class="btn-mas fa-solid fa-caret-right"></button>
+                    </td>
+                    <td>$ <span class="total">90</span></td>
+                    <td>
+                        <span class="btn-quitar fa-solid fa-trash"></span>
+                    </td>
+                </tr>
+            </template>
+
+
+
+    <!-------------------TEMPLATE FOOTER------------------->
+
+
+            <template id="template-footer">
+                        <div class="footer">
+                            <tr>
+                                <td scope="col" colspan="3" class="total-productos"><p>total:</p> </td>
+                                <td scope="col" colspan="1">$ <span>90</span></td>
+                            </tr>
+                            <div class="botones-carrito">
+                                <tr>
+                                    <td scope="col" colspan="2">
+                                        <button class="comprar-carrito" id="comprar-carrito"><i class="fa-solid fa-cart-shopping"></i> comprar</button>
+                                    </td>
+                                    <td scope="col" colspan="2">
+                                        <button class="vaciar-carrito" id="vaciar-carrito">
+                                            <i class="fa-solid fa-trash"></i> <span>vaciar</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </div>
+                        </div>
+            </template>
+
+    <!-------------------TEMPLATE CARD------------------->
+
+            <template id="template-card">
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-body">
+                                <img src="" class="card-img">
+                                <h5>titulo</h5>
+                                <span class="precio">precio</span>
+                                    <a href="javascript:void(0);" class="btn-ver"><i class="fa-solid fa-eye"></i></a>
+                                    <button  class="btn-comprar"><i class="fa-solid fa-cart-shopping"></i> agregar</button>
+                        </div>
+                            </div>
+                            
+                    </div>
+            </template>
+
+    </section>
+
+    <!--------------------------------SECTION HOME--------------------------------->
+
+    <section class="home">
+        <div class="banner">
+            <!-------------------BANNER------------------->
+        </div>
+        
+    </section>
+
+
+    <!--------------------------------SECTION PRODUCTOS--------------------------------->
+      
+    <section class="ultimos-productos">
+        <h2>últimos productos</h2>
+
+        <!-------------------PRODUCTOS MUESTRA------------------->
+        
+        <div class="productos-muestra">
+             <div class="row" id="cards"></div>
+        </div>
+
+    </section>
+
+
+    <!--------------------------------SECTION VISTA PREVIA--------------------------------->
+           
+    <section class="vista-previa">
+
+        <!-------------------PRODUCTOS PRODUCTO 1------------------->
+  
+        <div class="vista-producto producto-1">
+            <div class="box-producto">
+                    <div class="producto-img">
+                        <td><img src="assets/1.jpg" class="img-muestra"></td>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Small bag</h3>
+                        <p class="precio">$80.00</p>
+                        <hr>
+                        <p>colores disponibles: <span class="color-bolso"></span></p>
+                        <hr>
+                        <p>categoria: <span><a href="#">bolsos</a></span></p>
+                        <hr>
+                        <p class="parrafo">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sit eligendi consequuntur accusamus omnis tempora delectus? Aperiam fugiat unde dolor error distinctio cumque, consectetur minus. Commodi reprehenderit ullam iste debitis.
+                        </p>
+                        
+                    </div>
+                    <div class="fa-solid fa-xmark boton-cerrar" ></div>
+            </div>
+        </div>
+
+        <!-------------------PRODUCTOS PRODUCTO 2------------------->
+        <div class="vista-producto producto-2">
+            <div class="box-producto">
+                    <div class="producto-img">
+                        <td><img src="assets/2.jpg" alt=""></td>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Backpack</h3>
+                        <p class="precio">$90.00</p>
+                        <hr>
+                        <p>colores disponibles: <span class="color-bolso"></span></p>
+                        <hr>
+                        <p>categoria: <span><a href="#">bolsos</a></span></p>
+                        <hr>
+                        <p class="parrafo">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sit eligendi consequuntur accusamus omnis tempora delectus? Aperiam fugiat unde dolor error distinctio cumque, consectetur minus. Commodi reprehenderit ullam iste debitis.
+                        </p>
+                        
+                    </div>
+                    <div class="fa-solid fa-xmark boton-cerrar" ></div>
+            </div>
+        </div>
+
+        <!-------------------PRODUCTOS PRODUCTO 3------------------->
+        <div class="vista-producto producto-3">
+            <div class="box-producto">
+                    <div class="producto-img">
+                        <td><img src="assets/3.jpg" alt=""></td>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Hand bag</h3>
+                        <p class="precio">$80.00</p>
+                        <hr>
+                        <p>colores disponibles: <span class="color-bolso"></span></p>
+                        <hr>
+                        <p>categoria: <span><a href="#">bolsos</a></span></p>
+                        <hr>
+                        <p class="parrafo">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sit eligendi consequuntur accusamus omnis tempora delectus? Aperiam fugiat unde dolor error distinctio cumque, consectetur minus. Commodi reprehenderit ullam iste debitis.
+                        </p>
+                        
+                    </div>
+                    <div class="fa-solid fa-xmark boton-cerrar" ></div>
+            </div>
+        </div>
+
+        <!-------------------PRODUCTOS PRODUCTO 4------------------->
+        <div class="vista-producto producto-4">
+            <div class="box-producto">
+                    <div class="producto-img">
+                        <td><img src="assets/4.jpg" alt=""></td>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Mini shoulder bag</h3>
+                        <p class="precio">$85.00</p>
+                        <hr>
+                        <p>colores disponibles: <span class="color-bolso"></span></p>
+                        <hr>
+                        <p>categoria: <span><a href="#">bolsos</a></span></p>
+                        <hr>
+                        <p class="parrafo">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sit eligendi consequuntur accusamus omnis tempora delectus? Aperiam fugiat unde dolor error distinctio cumque, consectetur minus. Commodi reprehenderit ullam iste debitis.
+                        </p>
+                        
+                    </div>
+                    <div class="fa-solid fa-xmark boton-cerrar" ></div>
+            </div>
+        </div>
+
+        <!-------------------PRODUCTOS PRODUCTO 5------------------->
+        <div class="vista-producto producto-5">
+            <div class="box-producto">
+                    <div class="producto-img">
+                        <td><img src="assets/5.jpg" alt=""></td>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Hand bag nude</h3>
+                        <p class="precio">$90.00</p>
+                        <hr>
+                        <p>colores disponibles: <span class="color-bolso"></span></p>
+                        <hr>
+                        <p>categoria: <span><a href="#">bolsos</a></span></p>
+                        <hr>
+                        <p class="parrafo">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sit eligendi consequuntur accusamus omnis tempora delectus? Aperiam fugiat unde dolor error distinctio cumque, consectetur minus. Commodi reprehenderit ullam iste debitis.
+                        </p>
+                        
+                    </div>
+                    <div class="fa-solid fa-xmark boton-cerrar" ></div>
+            </div>
+        </div>
+
+        <!-------------------PRODUCTOS PRODUCTO 6------------------->
+        <div class="vista-producto producto-6">
+            <div class="box-producto">
+                    <div class="producto-img">
+                        <td><img src="assets/6.jpg" alt=""></td>
+                    </div>
+                    <div class="producto-info">
+                        <h3>Mini hand bag</h3>
+                        <p class="precio">$85.00</p>
+                        <hr>
+                        <p>colores disponibles: <span class="color-bolso"></span></p>
+                        <hr>
+                        <p>categoria: <span><a href="#">bolsos</a></span></p>
+                        <hr>
+                        <p class="parrafo">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam sit eligendi consequuntur accusamus omnis tempora delectus? Aperiam fugiat unde dolor error distinctio cumque, consectetur minus. Commodi reprehenderit ullam iste debitis.
+                        </p>
+                        
+                    </div>
+                    <div class="fa-solid fa-xmark boton-cerrar" ></div>
+            </div>
+        </div>
+
+        <!-------------------BOTON VER MAS------------------->
+
+        <div class="ver-mas">
+            <button class="btn-ver-mas">
+                ver más
+            </button>
+        </div>
+       
+    </section> 
+
+
+    <!--------------------------------FOOTER--------------------------------->
+
+    <footer class="footer">
+
+        <!-------------------FOOTER ICONS------------------->
+
+        <div class="social-icons">
+            <div class="fa-brands fa-facebook"></div>
+            <div class="fa-brands fa-twitter"></div>
+            <div class="fa-brands fa-instagram"></div>
+            <div class="fa-brands fa-pinterest"></div>
+        </div>
+
+        <!-------------------FOOTER INFORMACION------------------->
+        <div class="informacion-footer">
+            <div class="footer-box-info-1">
+                <ul><a href="#">Sobre Nosotros</a></ul>
+                <ul><a href="#">Contactanos</a></ul>
+                <ul><a href="#">Politica de Privacidad</a></ul>
+            </div>
+            <div class="footer-box-info-2">
+                <ul><a href="#">Politica de reembolso</a></ul>
+                <ul><a href="#">FAQs</a></ul>
+                <ul><a href="#">Our Blog</a></ul>
+            </div>
+        </div>
+    </footer>
+
+    
+    <!--------------------------------SCRIPTS--------------------------------->
+
+
+    <script src="js/script.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
